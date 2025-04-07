@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OxyGenie</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/gardening.css">
+
+  <script>
+    function performSearch() {
+      var query = document.getElementById('search-input').value;
+      alert("You searched for: " + query);
+    }
+  </script>
+
+ 
+</head>
+<body>
+    <header>
+        <div class="container">
+          <h1>OxyGenie</h1>
+          <nav>
+            <a href="home.html">Home</a>
+            <a href="ayurveda.html">Ayurveda</a>
+            <a href="gardening.html">Home Gardening</a>
+            <a href="shop.html">Shop</a>
+          </nav>
+          <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <a href="#">
+                <i class=" fas fa-search"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <div class="container">
+          <!-- Hero Section -->
+          <section class="hero">
+            <h2>Home Gardening</h2>
+            <p>Discover how to grow and care for plants in your home garden with our expert advice.</p>
+          </section>
+    
+          <!-- Gardening Tips Section -->
+          <section class="card gardening-tips">
+            <h2>Gardening Tips</h2>
+            <p>Learn valuable gardening tips to maintain a healthy and beautiful garden at home.</p>
+            <div class="content">
+              <div class="text">
+                <p>Discover the best practices for watering, sunlight, and maintaining plant health in your garden.</p>
+                <button>Learn More</button>
+              </div>
+              <div class="image-container">
+                <img src="Pics/home-gardening-tips-1.jpg" alt="Gardening Tips">
+              </div>
+            </div>
+          </section>
+    
+          <!-- Plant Categories Section -->
+          <section class="card">
+            <h2>Plant Categories</h2>
+            <div class="categories">
+              <div class="category">
+                <h3>Indoor Plants</h3>
+                <p>Perfect plants for brightening your indoor spaces.</p>
+                <a href="indoor.html">
+                <img src="Pics/indoor.jpeg" alt="Indoor Plants"></a>
+              </div>
+              <div class="category">
+                <h3>Outdoor Plants</h3>
+                <p>Find hardy plants that thrive outdoors all year round.</p>
+                <a href="outdoor.html">
+                <img src="Pics/outdoor.jpg" alt="Outdoor Plants"></a>
+              </div>
+              <div class="category">
+                <h3>Flowering Plants</h3>
+                <p>Bring vibrant colors to your garden with beautiful flowering plants.</p>
+                <a href="flowering.html">
+                <img src="Pics/flowering.jpg" alt="Flowering Plants"></a>
+              </div>
+            </div>
+          </section>
+    
+          <!-- Gardening Tools Section -->
+          <section class="card">
+            <h2>Essential Gardening Tools</h2>
+            <p>These tools will help you maintain your garden efficiently.</p>
+            <div class="Pics/tools-list">
+              <ul>
+                <li>Shovel</li>
+                <li>Pruning Shears</li>
+                <li>Watering Can</li>
+                <li>Gardening Gloves</li>
+              </ul>
+            </div>
+            <div class="image-container">
+              <img src="Pics/tools.jpg" alt="Gardening Tools">
+            </div>
+          </section>
+    
+          <!-- Call to Action Section -->
+          <section class="cta">
+            <h2>Stay Updated on Gardening Tips!</h2>
+            <p>Subscribe to our newsletter to get the latest gardening advice, tips, and offers.</p>
+            <button>Subscribe Now</button>
+          </section>
+        </div>
+      </main>
+      
+    
+      <footer>
+        <p>&copy; 2023 Plant Care. All rights reserved.</p>
+      </footer>
+</body>
+</html>

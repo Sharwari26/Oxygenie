@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - OxyGenie</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body> 
+  <!-- Floating Leaves -->
+  <div class="leaf" style="top: 10%; left: 5%;"></div>
+  <div class="leaf" style="top: 20%; left: 80%;"></div>
+  <div class="leaf" style="top: 50%; left: 20%;"></div>
+  <div class="leaf" style="top: 70%; left: 70%;"></div>
+
+  <div class="container">
+    <div class="form-container">
+      <img src="Pics/leaf.png" alt="Leaf Icon" class="leaf-icon">
+      <h2>Create an Account</h2>
+      <form id="registerForm" action="register.php" method="POST">
+        <div class="input-group">
+          <input type="text" id="registerName" required>
+          <label for="registerName">Full Name</label>
+        </div>
+        <div class="input-group">
+          <input type="email" id="registerEmail" required>
+          <label for="registerEmail">Email</label>
+        </div>
+        <div class="input-group">
+          <input type="password" id="registerPassword" required>
+          <label for="registerPassword">Password</label>
+        </div>
+        <button type="submit"><span>Register</span></button>
+      </form>
+      <p>Already have an account? <a href="index.html">Login here</a></p>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+  <form id="registerForm" action="register.php" method="POST">
+
+</body>
+</html>
