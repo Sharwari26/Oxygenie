@@ -25,7 +25,7 @@ Thumbs.db
 .env.*
 
 # Ignore image output folders if any (adjust accordingly)
-Pics/
+
 
 # Ignore backups or system-generated files
 *.bak
