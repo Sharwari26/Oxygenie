@@ -1,0 +1,30 @@
+#plantImage {
+    max-height: 350px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+.care-icon {
+    font-size: 2rem;
+    color: #198754;
+    margin-bottom: 0.5rem;
+}
+
+.badge {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+}
+
+#saveToFavorites:hover {
+    background-color: #e9f7ef;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}

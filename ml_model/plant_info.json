@@ -1,0 +1,306 @@
+[
+  {
+    "name": "Aloe Vera",
+    "description": "Aloe vera is a succulent plant species of the genus Aloe. It's widely known for its medicinal properties, particularly for treating skin conditions.",
+    "image_url": "images/plants/aloe_vera.jpg",
+    "category": "Indoor",
+    "plant_type": "Succulent",
+    "benefits": [
+      "Soothes sunburn and skin irritations",
+      "Has anti-inflammatory properties",
+      "Helps in digestion when consumed as juice",
+      "Accelerates wound healing",
+      "Rich in antioxidants and vitamins",
+      "Natural moisturizer for skin",
+      "Reduces dental plaque",
+      "Helps in treating canker sores",
+      "May lower blood sugar levels",
+      "Improves skin elasticity"
+    ],
+    "usage": [
+      "Apply gel directly to skin for burns or irritation",
+      "Use in homemade face masks for hydration",
+      "Consume as juice for digestive benefits",
+      "Grow indoors as an air-purifying plant",
+      "Use in natural hair conditioners"
+    ],
+    "care": {
+      "sunlight": "Bright, indirect light",
+      "water": "Water when soil is completely dry",
+      "temperature": "13-27°C (55-80°F)",
+      "soil": "Well-draining cactus or succulent mix"
+    },
+    "ayurvedic_properties": {
+      "dosha": "Pitta-pacifying",
+      "rasa": "Bitter, Astringent",
+      "virya": "Cold",
+      "vipaka": "Sweet"
+    }
+  },
+  {
+    "name": "Tulsi",
+    "description": "Tulsi (Holy Basil) is a sacred plant in Hindu tradition and has been used for thousands of years in Ayurvedic medicine for its healing properties.",
+    "image_url": "images/plants/tulsi.jpg",
+    "category": "Indoor/Outdoor",
+    "plant_type": "Herb",
+    "benefits": [
+      "Powerful adaptogen that helps the body adapt to stress",
+      "Reduces anxiety and depression",
+      "Protects against infections",
+      "Boosts immunity",
+      "Helps in respiratory disorders like bronchitis",
+      "Contains anti-inflammatory compounds",
+      "Helps maintain healthy blood sugar levels",
+      "Supports cardiovascular health",
+      "Natural detoxifier",
+      "Enhances memory and cognitive function"
+    ],
+    "usage": [
+      "Brew as herbal tea for respiratory issues",
+      "Add fresh leaves to salads or soups",
+      "Make tulsi water by soaking leaves overnight",
+      "Use in traditional rituals and meditation",
+      "Apply as paste for skin infections"
+    ],
+    "care": {
+      "sunlight": "Full sun to partial shade",
+      "water": "Keep soil consistently moist",
+      "temperature": "18-32°C (65-90°F)",
+      "soil": "Well-draining, fertile soil"
+    },
+    "ayurvedic_properties": {
+      "dosha": "Balances all three doshas",
+      "rasa": "Pungent, Bitter",
+      "virya": "Hot",
+      "vipaka": "Pungent"
+    }
+  },
+  {
+    "name": "Snake Plant",
+    "description": "Snake Plant (Sansevieria) is a popular indoor plant known for its air-purifying qualities and ability to thrive in low-light conditions.",
+    "image_url": "images/plants/snake_plant.jpg",
+    "category": "Indoor",
+    "plant_type": "Succulent",
+    "benefits": [
+      "Filters indoor air pollutants like formaldehyde",
+      "Converts CO2 to oxygen at night",
+      "Removes toxins like benzene and xylene",
+      "Helps prevent allergies by reducing airborne allergens",
+      "Adds humidity to indoor environments",
+      "Requires minimal care - perfect for beginners",
+      "Survives in low light conditions",
+      "Known to improve mental well-being",
+      "Relieves headaches by improving air quality",
+      "Natural defense against airborne pathogens"
+    ],
+    "usage": [
+      "Place in bedroom for overnight oxygen production",
+      "Use in offices to reduce computer radiation effects",
+      "Place in bathrooms to absorb excess moisture",
+      "Grow as a decorative element in low-light corners",
+      "Add to study areas to improve concentration"
+    ],
+    "care": {
+      "sunlight": "Indirect light to partial shade",
+      "water": "Allow soil to dry completely between waterings",
+      "temperature": "15-30°C (60-85°F)",
+      "soil": "Well-draining cactus mix"
+    },
+    "ayurvedic_properties": {
+      "dosha": "Reduces Vata and Kapha",
+      "rasa": "Astringent",
+      "virya": "Cold",
+      "vipaka": "Pungent"
+    }
+  },
+  {
+    "name": "Money Plant",
+    "description": "Money Plant (Epipremnum aureum) is a popular houseplant known for its heart-shaped leaves and air-purifying qualities. It's also believed to bring prosperity and good luck.",
+    "image_url": "images/plants/money_plant.jpg",
+    "category": "Indoor",
+    "plant_type": "Vine",
+    "benefits": [
+      "Excellent air purifier, removing formaldehyde",
+      "Reduces stress and anxiety",
+      "Improves indoor air quality",
+      "Believed to bring financial prosperity",
+      "Absorbs harmful VOCs from the air",
+      "Thrives in indoor environments with minimal care",
+      "Helps clean indoor air pollution",
+      "Adds humidity to indoor air",
+      "Believed to promote positive energy flow",
+      "Assists in reducing eye irritation from indoor pollutants"
+    ],
+    "usage": [
+      "Grow in hanging baskets for trailing vines",
+      "Place in living rooms for air purification",
+      "Use in south-east direction for prosperity (Vastu)",
+      "Grow in water for hydroponic decoration",
+      "Use for propagation to share with friends"
+    ],
+    "care": {
+      "sunlight": "Bright, indirect light",
+      "water": "Allow top soil to dry between waterings",
+      "temperature": "18-30°C (65-85°F)",
+      "soil": "Well-draining potting mix"
+    },
+    "ayurvedic_properties": {
+      "dosha": "Balances Vata",
+      "rasa": "Sweet",
+      "virya": "Cool",
+      "vipaka": "Sweet"
+    }
+  },
+  {
+    "name": "Peace Lily",
+    "description": "Peace Lily (Spathiphyllum) is a popular indoor plant known for its elegant white flowers and glossy leaves. It's one of the best air-purifying plants according to NASA studies.",
+    "image_url": "images/plants/peace_lily.jpg",
+    "category": "Indoor",
+    "plant_type": "Flowering",
+    "benefits": [
+      "Removes toxins like benzene, formaldehyde, and trichloroethylene",
+      "Helps reduce mold spores in the air",
+      "Absorbs acetone from the air",
+      "Increases room humidity by 5%",
+      "Reduces airborne microbes",
+      "Removes ammonia from indoor environments",
+      "Helps reduce symptoms of allergies and asthma",
+      "Removes VOCs released by household products",
+      "Symbolizes peace and tranquility",
+      "Naturally indicates when water is needed by drooping"
+    ],
+    "usage": [
+      "Place in bathrooms to absorb moisture and purify air",
+      "Use in bedrooms for oxygen production",
+      "Keep in living rooms as an elegant decorative piece",
+      "Place in office spaces to reduce computer radiation",
+      "Use in areas with new furniture to absorb formaldehyde"
+    ],
+    "care": {
+      "sunlight": "Low to moderate indirect light",
+      "water": "Keep soil moist but not soggy",
+      "temperature": "18-30°C (65-85°F)",
+      "soil": "Rich, loose potting mix with good drainage"
+    },
+    "ayurvedic_properties": {
+      "dosha": "Balances Pitta",
+      "rasa": "Sweet, Bitter",
+      "virya": "Cool",
+      "vipaka": "Sweet"
+    }
+  },
+  {
+    "name": "Neem",
+    "description": "Neem (Azadirachta indica) is a versatile tree native to India, known for its medicinal properties. It's been used in Ayurvedic medicine for thousands of years.",
+    "image_url": "images/plants/neem.jpg",
+    "category": "Outdoor",
+    "plant_type": "Tree",
+    "benefits": [
+      "Has powerful antibacterial and antifungal properties",
+      "Natural insect repellent and pesticide",
+      "Treats skin conditions like acne and eczema",
+      "Supports immune system function",
+      "Promotes oral health and hygiene",
+      "Helps in treating scalp conditions and dandruff",
+      "Supports liver function and detoxification",
+      "Has anti-inflammatory properties",
+      "Helps in balancing blood sugar levels",
+      "Natural air purifier when grown outdoors"
+    ],
+    "usage": [
+      "Use leaves in bath water for skin conditions",
+      "Make neem tea for internal detoxification",
+      "Use oil on skin for infections or insect bites",
+      "Crush leaves to make natural pesticide for plants",
+      "Use twigs as natural toothbrushes"
+    ],
+    "care": {
+      "sunlight": "Full sun",
+      "water": "Regular watering until established",
+      "temperature": "20-40°C (70-104°F)",
+      "soil": "Well-draining, fertile soil"
+    },
+    "ayurvedic_properties": {
+      "dosha": "Balances Pitta and Kapha",
+      "rasa": "Bitter, Astringent",
+      "virya": "Cold",
+      "vipaka": "Pungent"
+    }
+  },
+  {
+    "name": "Tulip",
+    "description": "Tulips are spring-blooming perennial herbaceous bulbiferous geophytes. The flowers are usually large, showy and brightly colored, generally red, pink, yellow, or white.",
+    "image_url": "images/plants/tulip.jpg",
+    "category": "Outdoor",
+    "plant_type": "Flowering",
+    "benefits": [
+      "Enhances mood and reduces stress through visual appeal",
+      "Symbolizes perfect love and happiness",
+      "Adds vibrant color to spring gardens",
+      "Attracts pollinators like bees and butterflies",
+      "Contains alkaloids with mild analgesic properties",
+      "Provides early spring nectar for beneficial insects",
+      "Bulbs can be replanted for multiple seasons",
+      "Creates stunning cut flower arrangements",
+      "Improves outdoor aesthetics",
+      "Has therapeutic effects on mental wellbeing"
+    ],
+    "usage": [
+      "Plant in garden beds for spring color",
+      "Grow in containers for portable displays",
+      "Use as cut flowers in arrangements",
+      "Plant along borders for seasonal impact",
+      "Force bulbs indoors for winter blooms"
+    ],
+    "care": {
+      "sunlight": "Full sun to partial shade",
+      "water": "Regular watering during growing season",
+      "temperature": "12-25°C (55-75°F)",
+      "soil": "Well-draining, sandy soil"
+    },
+    "ayurvedic_properties": {
+      "dosha": "Balances Vata",
+      "rasa": "Sweet",
+      "virya": "Cool",
+      "vipaka": "Sweet"
+    }
+  },
+  {
+    "name": "Basil",
+    "description": "Basil is a culinary herb of the family Lamiaceae (mints). It's a tender plant, best known as a culinary herb prominently featured in Italian cuisine and also plays a major role in Southeast Asian cuisines.",
+    "image_url": "images/plants/basil.jpg",
+    "category": "Indoor/Outdoor",
+    "plant_type": "Herb",
+    "benefits": [
+      "Rich in antioxidants and essential oils",
+      "Contains powerful anti-inflammatory compounds",
+      "Helps reduce oxidative stress",
+      "Supports cardiovascular health",
+      "Has antibacterial and antimicrobial properties",
+      "Enhances flavor in culinary dishes",
+      "Helps in stress reduction through aromatherapy",
+      "Supports digestive health",
+      "Contains vitamin K, A, and C",
+      "Natural insect repellent"
+    ],
+    "usage": [
+      "Use fresh leaves in salads and pasta dishes",
+      "Make pesto sauce for Italian cuisine",
+      "Add to tomato-based dishes for flavor",
+      "Infuse in oils for aromatic cooking",
+      "Use in herbal teas for digestive benefits"
+    ],
+    "care": {
+      "sunlight": "Full sun (6+ hours)",
+      "water": "Keep soil consistently moist",
+      "temperature": "18-30°C (65-85°F)",
+      "soil": "Rich, well-draining soil"
+    },
+    "ayurvedic_properties": {
+      "dosha": "Balances Vata and Kapha",
+      "rasa": "Pungent, Bitter",
+      "virya": "Hot",
+      "vipaka": "Pungent"
+    }
+  }
+]

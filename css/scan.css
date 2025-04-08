@@ -1,0 +1,146 @@
+body {
+    background: linear-gradient(to bottom, #d7f0d1, #b6e2c3);
+    font-family: 'Segoe UI', sans-serif;
+    
+  }
+
+  header {
+    background: #09480c; /* Green header */
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  header nav a:hover {
+    color: #c8e6c9; /* Light green hover */
+    border-bottom: 2px solid rgb(76, 236, 174);
+  }
+  
+
+
+
+
+  /* Search Bar Styles */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 30px;
+    padding: 0.5rem;
+    height: 20px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .search-bar:hover input{
+    width: 200px;
+  }
+
+  .search-bar input {
+    border: none;
+    outline: none;
+    font-weight: 200;
+    transition: 0.8s;
+    background: transparent;
+    flex: 1;
+    width: 0;
+  }
+  
+  .search-bar a .fas {
+    color: #033805;
+    font-size: 18px;
+  }
+  
+  .search-bar button:hover {
+    background: #388e3c; /* Darker green hover */
+  }
+  
+
+
+
+
+  
+  
+  .upload-area {
+    border: 2px dashed #198754;
+    border-radius: 12px;
+    padding: 40px;
+    background-color: #f9fff8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .upload-area:hover {
+    background-color: #f1fdf3;
+  }
+  
+  #uploadPrompt i {
+    color: #198754;
+  }
+  
+  #uploadPreview {
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card {
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 128, 0, 0.1);
+  }
+  
+  .card-header {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  
+  .btn-success {
+    background-color: #198754;
+    border-color: #198754;
+  }
+  
+  .btn-success:hover {
+    background-color: #146c43;
+    border-color: #13653f;
+  }
+  
+  footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  footer h5 {
+    font-weight: bold;
+  }
+  
