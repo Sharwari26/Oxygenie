@@ -3,47 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OxyGenie</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="css/home.css">
+  <title>OxyGenie | Infinite Floral</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/css/all.min.css">
 </head>
-<body>
-    <header>
-        <div class="container">
-          <h1>OxyGenie</h1>
-          <nav>
-            <a href="home.html">Home</a>
-            <a href="ayurveda.html">Ayurveda</a>
-            <a href="gardening.html">Home Gardening</a>
-            <a href="shop.html">Shop</a>
-          </nav>
-          <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <a href="#">
-                <i class=" fas fa-search"></i>
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <div class="containers">
-        <h1>Plant Scanner</h1>
-        <input type="file" id="plant-image" accept="image/*">
-        <button id="scan-btn">Scan Plant</button>
-        
-        <div id="plant-info">
-            <h3 id="plant-name"></h3>
-            <p id="plant-description"></p>
-            <p id="plant-benefits"></p>
-            <p id="plant-growing-steps"></p>
-        </div>
-    </div>
-
+<header>
+  <div class="container">
+    <h1 class="logo">OxyGenie</h1>
+    <nav>
       
+      <a href="ayurveda.html">Ayurveda</a>
+      <a href="gardening.html">Home Gardening</a>
+      <a href="scan.html">Scan</a>
+    </nav>
+    </div>
+  </div>
+</header>
 
 
+<body>
+  <!-- Infinite Scrolling Flower Rows -->
+  <div class="flower-rows" id="flowerRows"></div>
+  
+  <!-- Floating Leaves -->
+  <div class="floating-leaves" id="floatingLeaves"></div>
 
+  <!-- Center Content -->
+  <div class="center-content">
+    <div class="logo1">OxyGenie</div>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search plants...">
+      <button class="search-btn">
+        <i class="fas fa-search btn-icon"></i> Search
+      </button>
+      <a href="scan.html" class="scan-btn">
+        <i class="fas fa-camera btn-icon"></i> Scan
+      </a>
+      
+      </a>
+    </div>
+  </div>
 
-      <script src="js/home.js"></script>
+  <script>
+    // Your flower images (update paths)
+    const flowerImages = [
+      'flowrs/1.jpeg',
+      'flowrs/2.jpeg',
+      'flowrs/3.jpeg',
+      'flowrs/4.jpeg',
+      'flowrs/5.jpeg',
+      'flowrs/5.jpeg',
+      'flowrs/7.jpeg',
+      'flowrs/8.jpeg',
+      'flowrs/9.jpeg',
+      'flowrs/10.jpeg'
+    ];
+
+    // Create infinite scrolling rows
+    const flowerRows = document.getElementById('flowerRows');
+    const rowsCount = 5; // Number of rows
+    const itemsPerRow = 10; // Flowers per row
+    
+    for (let r = 0; r < rowsCount; r++) {
+      const row = document.createElement('div');
+      row.className = 'flower-row';
+      
+      // Add triple the items for seamless looping (original + 2 copies)
+      for (let i = 0; i < itemsPerRow * 3; i++) {
+        const item = document.createElement('div');
+        item.className = 'flower-item';
+        
+        const img = document.createElement('img');
+        // Cycle through your 10 images
+        img.src = flowerImages[(i % itemsPerRow) % flowerImages.length];
+        img.alt = `Flower ${(i % itemsPerRow) + 1}`;
+        
+        // Randomize some items slightly
+        if (Math.random() > 0.7) {
+          item.style.filter = `sepia(${30 + Math.random() * 30}%) brightness(${30 + Math.random() * 30}%)`;
+        }
+        
+        item.appendChild(img);
+        row.appendChild(item);
+      }
+      
+      // Alternate row speeds for parallax effect
+      const speed = 100 + (r * 2); // Each row moves at different speed
+      row.style.animationDuration = `${speed}s`;
+      
+      flowerRows.appendChild(row);
+    }
+
+    // Create floating leaves
+    const leavesContainer = document.getElementById('floatingLeaves');
+    const leafCount = 15;
+    
+    for (let i = 0; i < leafCount; i++) {
+      const leaf = document.createElement('div');
+      leaf.className = 'leaf';
+      
+      // Random properties
+      const size = Math.random() * 400 + 400;
+      const startX = Math.random() * 100;
+      const endX = (Math.random() * 2) - 1; // -1 to 1
+      const delay = Math.random() * 20;
+      const duration = Math.random() * 15 + 20;
+      const rotation = Math.random() * 350;
+      
+      leaf.style.width = `${size}px`;
+      leaf.style.height = `${size}px`;
+      leaf.style.left = `${startX}%`;
+      leaf.style.setProperty('--end-x', endX);
+      leaf.style.animationDelay = `${delay}s`;
+      leaf.style.animationDuration = `${duration}s`;
+      leaf.style.transform = `rotate(${rotation}deg)`;
+      
+      leavesContainer.appendChild(leaf);
+    }
+
+    // Interactive cursor effect
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      
+      // Subtle parallax effect on rows
+      document.querySelectorAll('.flower-row').forEach((row, i) => {
+        const offset = (i % 2 === 0) ? 10 : -10;
+        row.style.transform = `translateX(calc(-55.555% + ${x * offset}px))`;
+      });
+    });
+  </script>
 </body>
 </html>
