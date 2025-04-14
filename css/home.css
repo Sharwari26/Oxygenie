@@ -108,29 +108,7 @@
       z-index: 3;
     }
 
-    .logo1 {
-      font-size: 7.5rem;
-      font-weight: 900;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #4caf50, #2e7d32);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
-      animation: glow 4s ease-in-out infinite alternate;
-    }
-    
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
-      }
-      to {
-        text-shadow: 
-          0 0 20px rgba(76, 175, 80, 0.6),
-          0 0 30px rgba(56, 142, 60, 0.4),
-          0 0 40px rgba(46, 125, 50, 0.2);
-      }
-    }
+
     
 
     .search-container {
@@ -254,30 +232,18 @@ header nav a:hover {
     .btn-icon {
       margin-right: 8px;
     }
-    /* Header and Container Layout */
-header {
-  background: rgba(5, 53, 24, 0.85); /* Match your search bar green */
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-
-
-header nav a:hover {
-  color: #0f4707; /* Light green hover */
-  border-bottom: 2px solid rgb(4, 87, 48);
-}
-
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    header nav a:hover {
+      color: #c8e6c9; /* Light green hover */
+      border-bottom: 2px solid rgb(76, 236, 174);
+    }
 /* Search Bar Styles */
 .search-bar {
   display: flex;
@@ -303,6 +269,8 @@ header nav a:hover {
   color: #033805;
 }
 
+  
+
 .search-bar:hover input {
   width: 180px;
 }
@@ -313,5 +281,58 @@ header nav a:hover {
   margin-left: 0.5rem;
 }
 
+/* Big Center Logo */
+.big-logo {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: zoomFadeIn 2s ease-out;
+}
+.big-logo img {
+  max-width: 300px;
+  width: 40vw;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+
+/* Animation */
+@keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* Optional: if using text instead of image */
+
+.logo {
+  font-family: 'Merriweather';
+  font-size: 2.5rem;
+}
+.logo {
+  
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between icon and text */
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #a7e0aa; /* greenish tone */
+}
+
+.leaf-icon {
+  width: 40px;
+  height: 40px;
+}
 
 
+/*.leaf-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  animation: bounce 2s infinite ease-in-out;
+}*/

@@ -3,289 +3,286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OxyGenie | Infinite Floral</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.2/css/all.min.css">
-  <style>
-    :root {
-      --dark-bg: #f4fff7;
-      --darker-green: #4c705e;
-      --accent-green: #4caf50;
-      --text-light: rgba(255,255,255,0.92);
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow: hidden;
-      background: var(--dark-bg);
-      color: var(--text-light);
-    }
-
-    /* === Infinite Flower Rows === */
-    .flower-rows {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .flower-row {
-      display: flex;
-      width: 300%;
-      margin: 12px 0;
-      animation: scroll-left 40s linear infinite;
-    }
-
-    .flower-row:nth-child(even) {
-      animation-name: scroll-right;
-    }
-
-    @keyframes scroll-left {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-55.555%); }
-    }
-
-    @keyframes scroll-right {
-      0% { transform: translateX(-55.555%); }
-      100% { transform: translateX(0); }
-    }
-
-    .flower-item {
-      width: 350px;
-      aspect-ratio: 1 / 1.15;
-      margin: 0 10px;
-      overflow: hidden;
-      border-radius: 12px;
-      position: relative;
-      filter: sepia(40%) brightness(50%) hue-rotate(10deg);
-      transition: all 0.5s ease-in-out;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-
-    .flower-item:hover {
-      filter: sepia(0%) brightness(80%) hue-rotate(0deg);
-      transform: scale(1.1) rotate(-2deg);
-      z-index: 2;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
-
-    .flower-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s ease;
-    }
-
-    .flower-item:hover img {
-      transform: scale(1.2);
-    }
-
-    /* === Floating Leaves === */
-    .floating-leaves {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 5;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .leaf {
-      position: absolute;
-      background-image: url('leaf.png'); /* Add your leaf asset */
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.25;
-      animation: floatLeaf linear infinite;
-    }
-
-    @keyframes floatLeaf {
-      0% {
-        top: -200px;
-        transform: translateX(0) rotate(0deg);
-      }
-      100% {
-        top: 110%;
-        transform: translateX(calc(var(--end-x, 1) * 100px)) rotate(360deg);
-      }
-    }
-
-    /* === Center Content === */
-    .center-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      width: 90%;
-      max-width: 800px;
-      z-index: 3;
-    }
-
-    .logo {
-      font-size: 5.5rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, rgba(5, 53, 24, 0.85), rgba(5, 53, 24, 0.85));
-      -webkit-background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 20px rgba(5, 53, 24, 0.85);
-      animation: glow 4s ease-in-out infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px rgba(234, 240, 234, 0.3); }
-      to {
-        text-shadow: 0 0 20px rgba(75, 175, 80, 0.5), 
-                     0 0 30px rgba(248, 250, 248, 0.4);
-      }
-    }
-
-    .search-container {
-      display: flex;
-      background: rgba(5, 53, 24, 0.85);
-      border-radius: 50px;
-      padding: 5px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      border: 1px solid rgba(214, 223, 214, 0.3);
-      backdrop-filter: blur(12px);
-      transition: all 0.4s;
-    }
-
-    .search-container:focus-within {
-      transform: translateY(-5px);
-    }
-
-    .search-input {
-      flex: 1;
-      border: none;
-      background: transparent;
-      padding: 15px 25px;
-      font-size: 1.1rem;
-      outline: none;
-      color: white;
-    }
-
-    .search-input::placeholder {
-      color: rgba(255,255,255,0.5);
-    }
-
-    .search-btn, .scan-btn {
-      border: none;
-      background: linear-gradient(135deg, #4caf50, #388e3c);
-      color: white;
-      padding: 0 25px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      transition: all 0.3s;
-      margin-left: 5px;
-    }
-
-    .search-btn:hover, .scan-btn:hover {
-      background: linear-gradient(135deg, #388e3c, #2e7d32);
-      transform: translateY(-2px);
-    }
-
-    .btn-icon {
-      margin-right: 8px;
-    }
-  </style>
+  <title>OxyGenie - Indoor Plants Guide</title>
+  <meta name="description" content="Discover how to grow and care for indoor plants with OxyGenie. Learn about curry leaves, aloe vera, tulsi, and more.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/try.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-  <div class="flower-rows" id="flowerRows"></div>
-  <div class="floating-leaves" id="floatingLeaves"></div>
+  <!-- Skip to Content Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <div class="center-content">
-    <div class="logo">OxyGenie</div>
-    <div class="search-container">
-      <input type="text" class="search-input" placeholder="Search plants...">
-      <button class="search-btn">
-        <i class="fas fa-search btn-icon"></i> Search
-      </button>
-      <button class="scan-btn">
-        <i class="fas fa-camera btn-icon"></i> Scan
-      </button>
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="container">
+      <h1 class="logo">
+        <a href="home.html">OxyGenie</a>
+      </h1>
+      
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html" class="nav-link">Home</a></li>
+          <li><a href="ayurveda.html" class="nav-link">Ayurveda</a></li>
+          <li><a href="gardening.html" class="nav-link">Home Gardening</a></li>
+          <li><a href="shop.html" class="nav-link">Shop</a></li>
+        </ul>
+      </nav>
+      
+      <div class="search-container">
+        <form role="search" class="search-form">
+          <label for="search-input" class="sr-only">Search plants</label>
+          <input type="text" id="search-input" placeholder="Search plants..." class="search-input">
+          <button type="submit" class="search-button" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
     </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="plants-container">
+    <section class="plants-intro">
+      <h2 class="plants-title">Bring nature indoors—breathe life, grow joy <span aria-hidden="true">🌿✨</span></h2>
+      <p class="plants-subtitle"><span aria-hidden="true">🌱</span> Little green miracles that freshen your space and soul <span aria-hidden="true">💚</span></p>
+    </section>
+
+    <div class="plants-grid">
+      <!-- Plant Card 1 -->
+      <article class="plant-card searchable" data-name="p-1" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/CurryLeaves.jpg" alt="Curry Leaves plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Curry Leaves</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 2 -->
+      <article class="plant-card searchable" data-name="p-2" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/alo.webp" alt="Aloe Vera plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Aloe Vera</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 3 -->
+      <article class="plant-card searchable" data-name="p-3" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/Turmeric.jpg" alt="Turmeric plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Turmeric</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 4 -->
+      <article class="plant-card searchable" data-name="p-4" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/Tulsiin.jpg" alt="Tulsi plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Tulsi</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 5 -->
+      <article class="plant-card searchable" data-name="p-5" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/mintin.jpg" alt="Mint plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Mint</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 6 -->
+      <article class="plant-card searchable" data-name="p-6" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/Ashwagandha.webp" alt="Ashwagandha plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Ashwagandha</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 7 -->
+      <article class="plant-card searchable" data-name="p-7" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/money.jpg" alt="Money Plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Money Plant</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 8 -->
+      <article class="plant-card searchable" data-name="p-8" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/coriander.jpg" alt="Coriander plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Coriander</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 9 -->
+      <article class="plant-card searchable" data-name="p-9" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/Spinach.jpg" alt="Spinach plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Spinach</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 10 -->
+      <article class="plant-card searchable" data-name="p-10" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/Chili.jpg" alt="Chili plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Chili Plant</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 11 -->
+      <article class="plant-card searchable" data-name="p-11" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/Cherrytomatoes.jpg" alt="Cherry Tomatoes plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Cherry Tomatoes</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 12 -->
+      <article class="plant-card searchable" data-name="p-12" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/Fenugreek.jpg" alt="Fenugreek plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Fenugreek</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 13 -->
+      <article class="plant-card searchable" data-name="p-13" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/bou.webp" alt="Bougainvillea plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Bougainvillea</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 14 -->
+      <article class="plant-card searchable" data-name="p-14" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/jasmin.jpg" alt="Jasmine plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Jasmine</h3>
+        </div>
+      </article>
+
+      <!-- Plant Card 15 -->
+      <article class="plant-card searchable" data-name="p-15" tabindex="0">
+        <figure class="plant-image">
+          <img src="Pics/Marigold.webp" alt="Marigold plant" loading="lazy">
+        </figure>
+        <div class="plant-info">
+          <h3 class="plant-name">Marigold</h3>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Plant Modals -->
+  <div class="plant-modals" id="plant-modals">
+    <!-- Curry Leaves Modal -->
+    <div class="plant-modal" data-target="p-1">
+      <button class="modal-close" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-content">
+        <img src="Pics/CurryLeaves.jpg" alt="Curry Leaves plant" class="modal-image">
+        <div class="modal-text">
+          <h3>Curry Leaves <span aria-hidden="true">🌿</span></h3>
+          <div class="modal-section">
+            <h4>Easy Steps to Grow at Home</h4>
+            <ol>
+              <li><strong>Choose the Right Pot & Soil:</strong> Use a medium-sized pot (8-12 inches deep) with drainage holes. Fill with well-draining soil mixed with compost.</li>
+              <li><strong>Planting the Seeds or Cuttings:</strong> From Seeds: Soak seeds in water overnight before planting. From Cuttings: Use a 4-6 inch stem cutting from a healthy plant.</li>
+              <li><strong>Sunlight & Temperature:</strong> Place the plant in a sunny location (4-6 hours of sunlight daily). Prefers warm temperatures (20-30°C).</li>
+              <li><strong>Watering:</strong> Keep the soil moist but not soggy. Water 2-3 times a week (reduce in winter).</li>
+              <li><strong>Fertilization & Maintenance:</strong> Use organic compost or cow dung manure once a month. Trim the plant regularly to encourage bushy growth.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>Benefits of Curry Leaves<span aria-hidden="true">✨</span></h4>
+            <ul>
+              <li>Improves Digestion: Helps with constipation, acidity, and indigestion.</li>
+              <li>Boosts Hair Growth: Prevents dandruff and strengthens hair roots.</li>
+              <li>Controls Diabetes: Regulates blood sugar levels.</li>
+              <li>Rich in Antioxidants: Protects against infections and inflammation.</li>
+              <li>Supports Heart Health: Helps lower cholesterol levels.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other modals would follow the same structure -->
+    <!-- Aloe Vera Modal -->
+    <div class="plant-modal" data-target="p-2">
+      <!-- Content similar to above -->
+    </div>
+    
+    <!-- Continue with all other plant modals -->
   </div>
 
-  <script>
-    const flowerImages = [
-      'flowrs/1.jpeg', 'flowrs/2.jpeg', 'flowrs/3.jpeg', 'flowrs/4.jpeg', 'flowrs/5.jpeg',
-      'flowrs/5.jpeg', 'flowrs/7.jpeg', 'flowrs/8.jpeg', 'flowrs/9.jpeg', 'flowrs/10.jpeg'
-    ];
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="ayurveda.html">Ayurveda</a></li>
+            <li><a href="gardening.html">Gardening</a></li>
+            <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p>Email: info@oxygenie.com</p>
+          <p>Phone: +1 (123) 456-7890</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 OxyGenie. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-    const flowerRows = document.getElementById('flowerRows');
-    const rowsCount = 5;
-    const itemsPerRow = 10;
-
-    for (let r = 0; r < rowsCount; r++) {
-      const row = document.createElement('div');
-      row.className = 'flower-row';
-
-      for (let i = 0; i < itemsPerRow * 3; i++) {
-        const item = document.createElement('div');
-        item.className = 'flower-item';
-
-        const img = document.createElement('img');
-        img.src = flowerImages[i % flowerImages.length];
-        img.alt = `Flower ${i + 1}`;
-
-        if (Math.random() > 0.7) {
-          item.style.filter = `sepia(${30 + Math.random() * 30}%) brightness(${30 + Math.random() * 30}%)`;
-        }
-
-        item.appendChild(img);
-        row.appendChild(item);
-      }
-
-      row.style.animationDuration = `${100 + (r * 2)}s`;
-      flowerRows.appendChild(row);
-    }
-
-    // Floating Leaves
-    const leavesContainer = document.getElementById('floatingLeaves');
-    const leafCount = 15;
-
-    for (let i = 0; i < leafCount; i++) {
-      const leaf = document.createElement('div');
-      leaf.className = 'leaf';
-
-      const size = Math.random() * 400 + 400;
-      const startX = Math.random() * 100;
-      const endX = (Math.random() * 2) - 1;
-      const delay = Math.random() * 20;
-      const duration = Math.random() * 15 + 20;
-      const rotation = Math.random() * 360;
-
-      leaf.style.width = `${size}px`;
-      leaf.style.height = `${size}px`;
-      leaf.style.left = `${startX}%`;
-      leaf.style.setProperty('--end-x', endX);
-      leaf.style.animationDelay = `${delay}s`;
-      leaf.style.animationDuration = `${duration}s`;
-      leaf.style.transform = `rotate(${rotation}deg)`;
-
-      leavesContainer.appendChild(leaf);
-    }
-
-    // Mouse movement parallax
-    document.addEventListener('mousemove', (e) => {
-      const x = e.clientX / window.innerWidth;
-      document.querySelectorAll('.flower-row').forEach((row, i) => {
-        const offset = (i % 2 === 0) ? 10 : -10;
-        row.style.transform = `translateX(calc(-55.555% + ${x * offset}px))`;
-      });
-    });
-  </script>
+  <script src="js/try.js" defer></script>
 </body>
 </html>
