@@ -1,48 +1,96 @@
-// Plant Database
-const plantDatabase = [
-    {
-        name: 'Aloe Vera',
-        image: 'aloe_vera.jpg',  // The image filename
-        description: 'Aloe Vera is a succulent plant species of the genus Aloe. It has medicinal properties, especially for skin and burns.',
-        benefits: '1. Soothes skin burns. 2. Hydrates skin. 3. Boosts digestion.',
-        growingSteps: '1. Needs bright, indirect sunlight. 2. Water when the soil is dry. 3. Prefers well-drained soil.'
-    },
-    {
-        name: 'Tulsi',
-        image: 'tulsi.jpg',
-        description: 'Tulsi (Holy Basil) is a fragrant plant often used in Ayurvedic medicine. Known for its healing properties.',
-        benefits: '1. Boosts immunity. 2. Helps in stress relief. 3. Purifies air.',
-        growingSteps: '1. Thrives in warm, sunny climates. 2. Water regularly but avoid over-watering. 3. Prefers well-drained soil.'
-    },
-    // Add more plants here...
-];
+const flowerImages = [
+    'flowers/adenium.webp',
+    'flowers/Anthurium.webp',
+    'flowers/Anthurium1.webp',
+    'flowers/AV.webp',
+    'flowers/banana1.webp',
+    'flowers/basil.webp',
+    'flowers/begonia.webp',
+    'flowers/Tulsi.webp',
+    'flowers/Sunfl.webp',
+    'flowers/Straw.webp',
+    'flowers/Snap.webp',
+    'flowers/Petunia.webp',
+    'flowers/periw.webp',
+    'flowers/morningg.webp',
+    'flowers/dahlia.webp',
+    'flowers/CurryLeaves - Copy.webp',
+    'flowers/bou.webp',
+    'flowers/basil.webp',
+    'flowers/flowering.webp',
+    'flowers/dahlia.webp',
+    'flowers/Orchids.webp',
+    'flowers/peri.webp',
+    'flowers/Neem.webp',
 
-// Event listener for scanning the plant
-document.getElementById('scan-btn').addEventListener('click', function () {
-    const fileInput = document.getElementById('plant-image');
-    const file = fileInput.files[0];
-
-    if (!file) {
-        alert('Please upload an image of a plant.');
-        return;
+  ];
+  
+  function preloadCriticalImages() {
+    const criticalImages = flowerImages.slice(0, 4);
+    criticalImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }
+  
+  function createFlowerGrid() {
+    const flowerRows = document.getElementById('flowerRows');
+    const rowsCount = 5;
+    const itemsPerRow = 10;
+    
+    for (let r = 0; r < rowsCount; r++) {
+      const row = document.createElement('div');
+      row.className = 'flower-row';
+      row.style.animationDuration = `${80 + (r * 10)}s`;
+      
+      for (let i = 0; i < itemsPerRow * 3; i++) {
+        const item = document.createElement('div');
+        item.className = 'flower-item';
+        
+        const img = document.createElement('img');
+        const imgIndex = i % flowerImages.length;
+        
+        img.loading = 'lazy';
+        img.alt = `Flower ${imgIndex + 1}`;
+        img.dataset.src = flowerImages[imgIndex];
+        
+        const hue = 120 + Math.floor(Math.random() * 30);
+        item.style.background = `hsl(${hue}, 50%, 20%)`;
+        
+        img.onload = function() {
+          this.classList.add('loaded');
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target.querySelector('img');
+              if (img && !img.src) {
+                img.src = img.dataset.src;
+              }
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '200px' });
+        
+        item.appendChild(img);
+        row.appendChild(item);
+        observer.observe(item);
+      }
+      
+      flowerRows.appendChild(row);
     }
-
-    // Get the file name (without extension) to match with the database
-    const fileName = file.name.split('.')[0].toLowerCase();
-
-    // Check if the uploaded file name matches any plant in the database
-    const plant = plantDatabase.find(p => p.image.split('.')[0].toLowerCase() === fileName);
-
-    if (plant) {
-        // Display plant info
-        document.getElementById('plant-name').innerText = plant.name;
-        document.getElementById('plant-description').innerText = plant.description;
-        document.getElementById('plant-benefits').innerText = plant.benefits;
-        document.getElementById('plant-growing-steps').innerText = plant.growingSteps;
-
-        // Show the info container
-        document.getElementById('plant-info').style.display = 'block';
-    } else {
-        alert('Sorry, we could not identify this plant.');
-    }
-});
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    preloadCriticalImages();
+    createFlowerGrid();
+    
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      document.querySelectorAll('.flower-row').forEach((row, i) => {
+        const offset = (i % 2 === 0) ? 10 : -10;
+        row.style.transform = `translateX(calc(-55.555% + ${x * offset}px))`;
+      });
+    });
+  });
