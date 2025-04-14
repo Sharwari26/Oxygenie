@@ -6,54 +6,20 @@
   <title>OxyGenie - Plant Scanner</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet"/>
-  <script src="js/scan.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="css/scan.css">
-
-  <style>
-    .card {
-      border-radius: 16px;
-    }
-    .upload-area {
-      border: 2px dashed #198754;
-      border-radius: 10px;
-      padding: 40px;
-      background-color: #f9fff8;
-      cursor: pointer;
-    }
-    .upload-area:hover {
-      background-color: #f1fdf3;
-    }
-    footer {
-      background-color: #222;
-      color: #fff;
-    }
-  </style> 
 </head>
 <body>
-        <header>
-            <div class="container">
-              <h1>OxyGenie</h1>
-              <nav>
-                <a href="home.html">Home</a>
-                <a href="ayurveda.html">Ayurveda</a>
-                <a href="gardening.html">Home Gardening</a>
+  <!-- Infinite Scrolling Flower Rows -->
+  <div class="flower-rows" id="flowerRows"></div>
+  
+  <!-- Floating Leaves -->
+  <div class="floating-leaves" id="floatingLeaves"></div>
  
-              </nav>
-              <div class="search-bar">
-                <input type="text" placeholder="Search...">
-                <a href="#">
-                    <i class=" fas fa-search"></i>
-                </a>
-              </div>
-            </div>
-          </header>
-
- 
-
   <main class="container my-5">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <div class="card shadow p-4">
+        <div class="card shadow p-4" style="background-color: rgba(255, 255, 255, 0.9);">
           <div class="card-header text-white bg-success text-center rounded">
             <h2 class="mb-0">Plant Recognition</h2>
           </div>
@@ -70,6 +36,7 @@
                 </div>
                 <img id="uploadPreview" class="img-fluid d-none mt-3" />
               </div>
+    
             
               <input type="file" id="plantImage" class="d-none" accept="image/*" />
             
@@ -80,15 +47,33 @@
                 </div>
               </div>
             </form>
-            
           </div>
         </div>
       </div>
     </div>
   </main>
-
-
-
+  <header>
+    <div class="container">
+      <a href="home.html" class="logo">
+        <img src="Pics/leaf.png" alt="OxyGenie Logo" class="leaf-icon">
+        <span>OxyGenie</span>
+      </a>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="ayurveda.html">Ayurveda</a>
+        <a href="gardening.html">Home Gardening</a>
+      </nav>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <a href="#">
+          <i class="fas fa-search"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scan.js"></script>
+  <script src="js/floral-background.js"></script> <!-- New background script -->
 </body>
 </html>

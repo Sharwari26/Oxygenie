@@ -1,4 +1,126 @@
+/* Remove the old body background */
 body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Add floral background styles */
+.flower-rows {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.flower-row {
+  display: flex;
+  width: 300%;
+  margin: 15px 0;
+  animation: scroll-left 80s linear infinite;
+}
+
+.flower-row:nth-child(even) {
+  animation-name: scroll-right;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-55.555%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-55.555%); }
+  100% { transform: translateX(0); }
+}
+
+.flower-item {
+  width: 350px;
+  aspect-ratio: 1.8 / 2;
+  margin: 0 8px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.4, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #0a3b21, #125c38);
+}
+
+.flower-item:hover {
+  transform: scale(1.08) rotate(-1deg);
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.flower-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.flower-item img.loaded {
+  opacity: 1;
+}
+
+.floating-leaves {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.leaf {
+  position: absolute;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%234caf50" d="M50 0c-10 20-20 30-40 40 10 20 20 30 40 40 20-10 30-20 40-40-20-10-30-20-40-40z"/></svg>');
+  background-size: contain;
+  opacity: 0;
+  animation: float-leaf 25s infinite;
+  filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.7));
+}
+
+@keyframes float-leaf {
+  0% {
+    transform: translate(0, 110vh) rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(calc(100vw * var(--end-x)), -100px) rotate(360deg) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Keep your existing header and card styles */
+header {
+  background: rgba(5, 53, 24, 0.85);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+/* ... rest of your existing scan.css styles ... */body {
     background: linear-gradient(to bottom, #d7f0d1, #b6e2c3);
     font-family: 'Segoe UI', sans-serif;
     
@@ -30,21 +152,80 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
-  header nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  header nav a:hover {
-    color: #c8e6c9; /* Light green hover */
-    border-bottom: 2px solid rgb(76, 236, 174);
-  }
-  
+  /* Header Styles */
+header {
+  background: rgba(5, 53, 24, 0.95); /* More opaque for better readability */
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #a7e0aa;
+  text-decoration: none;
+}
+
+.leaf-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .leaf-icon {
+  transform: rotate(15deg);
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-green);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #c8e6c9;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
 
 
   /* Search Bar Styles */
