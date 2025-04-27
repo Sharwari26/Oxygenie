@@ -11,7 +11,7 @@ body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
-  background: var(--dark-bg);
+  background: var(--dark-bg); 
   color: var(--text-light);
 }
 
@@ -48,6 +48,11 @@ header {
   height: 40px;
   transition: transform 0.3s ease;
 }
+
+.logo:hover .leaf-icon {
+  transform: rotate(15deg);
+}
+
 .oxxy {
   display: inline-block;
   background: #eafaf0;
