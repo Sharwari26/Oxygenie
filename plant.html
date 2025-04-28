@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #e0f7e9;
+        }
+        .plant-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="plant-card" id="plantDetails">
+    <!-- Plant details will appear here -->
+</div>
+
+<script>
+// Step 1: Get the plant name from URL
+const urlParams = new URLSearchParams(window.location.search);
+const plantName = urlParams.get('name');
+
+// Step 2: Create plant database (can be expanded)
+const plantDatabase = {
+    "aloevera": {
+        name: "Aloe Vera",
+        benefits: "Soothes burns, improves skin health, aids digestion.",
+        growing: "Needs bright, indirect sunlight. Water deeply but infrequently."
+    },
+    "tulsi": {
+        name: "Tulsi (Holy Basil)",
+        benefits: "Boosts immunity, reduces stress, purifies air.",
+        growing: "Requires warm temperature and regular watering."
+    },
+    "neem": {
+        name: "Neem",
+        benefits: "Antibacterial, purifies blood, promotes oral health.",
+        growing: "Thrives in hot, dry conditions. Requires minimal water."
+    }
+};
+
+// Step 3: Display plant details
+const details = plantDatabase[plantName];
+
+if (details) {
+    document.getElementById('plantDetails').innerHTML = `
+        <h1>${details.name}</h1>
+        <h3>Benefits:</h3>
+        <p>${details.benefits}</p>
+        <h3>Growing Parameters:</h3>
+        <p>${details.growing}</p>
+    `;
+} else {
+    document.getElementById('plantDetails').innerHTML = `<h2>Plant not found. Please try another search!</h2>`;
+}
+</script>
+
+</body>
+</html>

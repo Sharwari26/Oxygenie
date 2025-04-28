@@ -62,3 +62,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+
+// Function to get URL parameter
+function getPlantQuery() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('plant'); // returns null if not found
+}
+
+// After page loads
+window.addEventListener('DOMContentLoaded', () => {
+    const plantQuery = getPlantQuery();
+    if (plantQuery) {
+        // Find the card by matching the text inside .cards_des
+        const allCards = document.querySelectorAll('.cards_article');
+
+        allCards.forEach(card => {
+            const plantName = card.querySelector('.cards_des')?.textContent.trim().toLowerCase();
+            if (plantName === plantQuery) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                card.style.border = "3px solid green"; // optional highlight
+                card.style.boxShadow = "0 0 20px green"; // optional glow effect
+            }
+        });
+    }
+});

@@ -85,6 +85,46 @@ document.addEventListener('DOMContentLoaded', () => {
   preloadCriticalImages();
   createFlowerGrid();
 
+  const searchBtn = document.querySelector('.search-btn');
+  const searchInput = document.querySelector('.search-input');
+
+  const plantPages = {
+    'tomato': 'outdoor.html',
+    'mango': 'outdoor.html',
+    'sunflower': 'outdoor.html',
+    'tulsi': 'indoor.html',
+    'coriander': 'indoor.html',
+    'marigold': 'indoor.html',
+    'hibiscus': 'flowering.html',
+    'cherryblossom': 'flowering.html',
+    'geranium': 'flowering.html',
+  };
+
+  searchBtn.addEventListener('click', () => {
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (plantPages[query]) {
+      // if plant name exists
+      window.location.href = `${plantPages[query]}?plant=${query}`;
+    } else if (query === 'indoor') {
+      window.location.href = 'indoor.html';
+    } else if (query === 'outdoor') {
+      window.location.href = 'outdoor.html';
+    } else if (query === 'flowering') {
+      window.location.href = 'flowering.html';
+    } else if (query === 'ayurveda') {
+      window.location.href = 'ayurveda.html';
+    } else {
+      alert('No results found. Try a plant name like "neem", or category like "indoor".');
+    }
+  });
+
+  searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      searchBtn.click();
+    }
+  });
+
   document.addEventListener('mousemove', (e) => {
     const x = e.clientX / window.innerWidth;
     document.querySelectorAll('.flower-row').forEach((row, i) => {
@@ -92,30 +132,5 @@ document.addEventListener('DOMContentLoaded', () => {
       row.style.transform = `translateX(calc(-55.555% + ${x * offset}px))`;
     });
   });
-
-  // --- Search Button Logic ---
-  const searchBtn = document.querySelector('.search-btn');
-  const searchInput = document.querySelector('.search-input');
-
-  // Handle Search Button Click
-  searchBtn.addEventListener('click', () => {
-    const query = searchInput.value.trim().toLowerCase();
-
-    if (query === 'indoor') {
-      window.location.href = 'indoor.html';
-    } else if (query === 'outdoor') {
-      window.location.href = 'outdoor.html';
-    } else if (query === 'flowering') {
-      window.location.href = 'flowering.html';
-    } else {
-      alert('No results found. Try "indoor", "outdoor", or "flowering".');
-    }
-  });
-
-  // Handle Enter Key Press in Search Bar
-  searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      searchBtn.click();
-    }
-  });
 });
+
